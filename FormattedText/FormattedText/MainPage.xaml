@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormattedText.MainPage"
+             xmlns:local="clr-namespace:FormattedText"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <Label Margin="10" LineHeight="2" InputTransparent="False" TextColor="Black" >
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Click "  FontSize="16"/>
+                <local:HyperlinkUI Text="here" LinkUrl="https://docs.microsoft.com/xamarin/"  FontSize="16"/>
+                <Span Text=" to learn more about Syncfusion .NET MAUI Controls."  FontSize="16"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+</ContentPage>
