@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShellPageNavigation.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShellPageNavigation"
+    FlyoutBackgroundColor="#FFEEEEEE"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Add"
+        ContentTemplate="{DataTemplate local:AddPage}"
+        Route="AddPage" />
+
+    <ShellContent
+        Title="Edit"
+        ContentTemplate="{DataTemplate local:EditPage}"
+        Route="EditPage" />
+
+</Shell>
