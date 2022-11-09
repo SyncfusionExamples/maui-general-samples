@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI7Features.MainPage">
+
+    <ScrollView>
+        <Grid RowDefinitions="*,*"
+              ColumnDefinitions="*,*">
+            <Label Grid.Row="0" Grid.Column="0"
+                Text="Right click here to show Context Menu"
+                HorizontalOptions="Center" 
+                   VerticalOptions="Center" >
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Cut" />
+                        <MenuFlyoutItem Text="Copy"/>
+                        <MenuFlyoutItem Text="Paste"/>
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Label>
+
+            <Label Grid.Row="0" Grid.Column="1"
+                   ToolTipProperties.Text="Hello!"
+                Text="Hover on me to show tool tip"
+                HorizontalOptions="Center" 
+                   VerticalOptions="Center" >
+            </Label>
+
+            <Label Text="Hover on me to highlight" Grid.Row="1" Grid.Column="0"                 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="Red"/>
+                                    <Setter Property="Background" Value="Yellow"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="Black"/>
+                                    <Setter Property="Background" Value="White"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Label>
+            <VerticalStackLayout   Grid.Row="1" Grid.Column="1">
+            <Label Text="Click (left or right) on the below mouse image" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Image x:Name="mouseClickImage" Source="mouseclick.png" WidthRequest="250" HeightRequest="250">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Buttons="Primary" Tapped="TapGestureRecognizer_Tapped" />
+                    <TapGestureRecognizer Buttons="Secondary" Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Image.GestureRecognizers>
+            </Image>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
