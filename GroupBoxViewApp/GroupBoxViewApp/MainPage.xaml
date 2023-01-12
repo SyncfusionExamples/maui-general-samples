@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:groupBoxView="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="GroupBoxViewApp.MainPage">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout WidthRequest="300"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <groupBoxView:SfAvatarView ContentType="Custom"
+                                       CornerRadius="75"
+                                       Stroke="#ce04d1"
+                                       ImageSource="selvaganapathy.png"
+                                       WidthRequest="150"
+                                       HeightRequest="150"/>
+            <Label Text="Selva Ganapathy Kathiresan"
+                   Margin="0,10"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <groupBoxView:SfTextInputLayout Hint="About" 
+                                            Stroke="#ce04d1"
+                                            ContainerType="Outlined" 
+                                            ContainerBackground="White">
+                <groupBoxView:SfTextInputLayout.HintLabelStyle>
+                    <groupBoxView:LabelStyle TextColor="#d10489"/>
+                </groupBoxView:SfTextInputLayout.HintLabelStyle>
+                <VerticalStackLayout Margin="5">
+                    <Label FontSize="10" 
+                           Text="Selva Ganapathy Kathiresan is a Senior Product Manager at Syncfusion and a Microsoft MVP (2014), who sees through the development of Layout and Editors."/>
+                    <Grid ColumnDefinitions="Auto,*" 
+                          Margin="0,10,0,0">
+                        <groupBoxView:SfEffectsView TouchDownEffects="Ripple">
+                        <Label  Background="Transparent" 
+                                Text="Follow"
+                               TextColor="#d10489"
+                                FontSize="12"/>
+                        </groupBoxView:SfEffectsView>
+                        <Label Grid.Column="1" 
+                               Background="Transparent" 
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="End"
+                               Text="Add Friend"
+                                TextColor="#ce04d1"
+                                FontSize="12"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </groupBoxView:SfTextInputLayout>
+
+            <groupBoxView:SfTextInputLayout Hint="Friends" Padding="-10,0"
+                                            Stroke="#ce04d1"
+                                            ContainerType="Outlined" 
+                                            ContainerBackground="White">
+                <groupBoxView:SfTextInputLayout.HintLabelStyle>
+                    <groupBoxView:LabelStyle TextColor="#d10489"/>
+                </groupBoxView:SfTextInputLayout.HintLabelStyle>
+                <VerticalStackLayout>
+                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding GroupMembers}" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <groupBoxView:SfAvatarView Margin="5,5,0,0"
+                                     HeightRequest="70"
+                                     WidthRequest="70"
+                                     CornerRadius="35"
+                                     ContentType="Custom"
+                                     ImageSource="{Binding Picture}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+                    <HorizontalStackLayout BindableLayout.ItemsSource="{Binding GroupMembers1}" >
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <groupBoxView:SfAvatarView Margin="5,5,0,0"
+                                     HeightRequest="70"
+                                     WidthRequest="70"
+                                     CornerRadius="35"
+                                     ContentType="Custom"
+                                     ImageSource="{Binding Picture}"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout BindableLayout.ItemsSource="{Binding GroupMembers2}" >
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <groupBoxView:SfAvatarView Margin="5,5,0,0"
+                                  HeightRequest="70"
+                                     WidthRequest="70"
+                                     CornerRadius="35"
+                                     ContentType="Custom"
+                                     ImageSource="{Binding Picture}"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </groupBoxView:SfTextInputLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
