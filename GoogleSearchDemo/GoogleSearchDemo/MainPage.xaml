@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GoogleSearchDemo"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             x:Class="GoogleSearchDemo.MainPage">
+
+    <Grid Margin="0,20,0,0">
+        <editors:SfAutocomplete HorizontalOptions="Center" 
+                                VerticalOptions="StartAndExpand" HeightRequest="50"
+                                Placeholder="Search something" MaxDropDownHeight="250"
+                                TextSearchMode="Contains"
+                                WidthRequest="300">
+            <editors:SfAutocomplete.FilterBehavior>
+                <local:CustomFiltering/>
+            </editors:SfAutocomplete.FilterBehavior>
+        </editors:SfAutocomplete>
+    </Grid>
+
+</ContentPage>
