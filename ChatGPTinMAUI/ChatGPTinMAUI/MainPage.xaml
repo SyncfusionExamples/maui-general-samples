@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+             xmlns:busy="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             x:Class="ChatGPTinMAUI.MainPage">
+    <busy:SfBusyIndicator x:Name="busyIndicator">
+        <ScrollView>
+            <Grid >
+            <maps:SfMaps x:Name="maps">
+                <maps:SfMaps.Layer>
+                    <maps:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+                        <maps:MapTileLayer.ZoomPanBehavior>
+                            <maps:MapZoomPanBehavior MinZoomLevel="3"
+                                                     MaxZoomLevel="100"
+                                                     EnableDoubleTapZooming="True"
+                                                    ZoomLevel="10">
+                            </maps:MapZoomPanBehavior>
+                        </maps:MapTileLayer.ZoomPanBehavior>
+                    </maps:MapTileLayer>
+                </maps:SfMaps.Layer>
+            </maps:SfMaps>
+                <syncfusion:SfPopup x:Name="popupDisplay" 
+                                    IsOpen="false" 
+                                   ShowHeader="False"
+                                    WidthRequest="500"
+                                    HeightRequest="300">
+                    <syncfusion:SfPopup.ContentTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="20,*">
+                                <Label Text="5 places to visit in this location :" FontSize="14" FontAttributes="Bold" />
+                                <ScrollView Grid.Row="1" >
+                                <Label Text="{Binding ContentText}" Margin="0,10,0,10" />
+                                </ScrollView>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfPopup.ContentTemplate>
+                </syncfusion:SfPopup>
+            </Grid>
+
+    </ScrollView>
+    </busy:SfBusyIndicator>
+</ContentPage>
